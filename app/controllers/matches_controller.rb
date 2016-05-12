@@ -13,6 +13,7 @@ class MatchesController < ApplicationController
   # end
   def index
     @users = current_user.likers(User)  #These are people who liked me (aka current_user)
+    @conversations = Conversation.involving(current_user).order("created_at DESC")
     @matches_count = 0
     @users.each do |user|
       if current_user.likes?(user) 

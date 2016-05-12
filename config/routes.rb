@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   #                                                 password: 'secret', confirmation: 'verification', 
   #                                                 unlock: 'unblock', registration: 'register', 
   #                                                   sign_up: 'sign_up' }
+  resources :conversations do
+    resources :messages
+  end
   resources :posts
   resources :users do
     member do

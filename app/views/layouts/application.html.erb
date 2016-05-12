@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta content='<%= user_signed_in? ? current_user.id : "" %>' name='user-id'/>
     <title>Tinder</title>
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+    
+    <title>Chatty</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" style="background-color: white;">
@@ -40,5 +45,6 @@
     <div>
         <%= yield %>
     </div>
+    <audio id="chatAudio"><source src="/sounds/notification.mp3" type="audio/mpeg"></audio>
 </body>
 </html>
