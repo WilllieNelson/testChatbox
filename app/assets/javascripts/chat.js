@@ -7,7 +7,6 @@
  *
  */
 
-
 var chatboxFocus = new Array();
 var chatBoxes = new Array();
 
